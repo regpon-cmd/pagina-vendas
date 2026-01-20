@@ -1,1 +1,364 @@
+<style>
+  :root{
+    --bg:#f8fafc; /* light */
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#475569;
+    --primary:#2563eb; /* blue-600 */
+    --primary-700:#1d4ed8;
+    --accent:#16a34a; /* green-600 */
+    --warning:#ef4444; /* red-500 */
+    --ring: rgba(37,99,235,.25);
+    --shadow:0 10px 30px rgba(2,6,23,.08);
+    --radius:18px;
+    --radius-sm:12px;
+    --radius-lg:24px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:var(--text);}
+  a{color:var(--primary);text-decoration:none}
+ .main-content > .py-10 {
+    display: none !important;
+  }
 
+ 
+  .main-content {
+    min-height: auto !important;
+  }
+
+  #bE0tTM, [id^="layer_"] {
+  }
+html, body {
+  overflow-x: hidden;
+}
+
+section:first-of-type {
+}
+
+  .container{width:100%;max-width:var(--maxw);margin:0 auto;}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:14px 22px;border-radius:999px;background:var(--primary);color:#fff;font-weight:700;box-shadow:0 8px 20px rgba(37,99,235,.25);transition:.2s; border:0;cursor:pointer}
+  .btn:hover{background:var(--primary-700);transform:translateY(-1px)}
+  .btn.secondary{background:#0ea5e9}
+  .btn.ghost{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+  header{position:sticky;top:0;background:rgba(248,250,252,.85);backdrop-filter:saturate(180%) blur(14px);z-index:50;border-bottom:1px solid #e2e8f0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.05rem}
+  .brand .dot{width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(22,163,74,.15)}
+  .menu{display:flex;gap:14px;flex-wrap:wrap}
+  .menu a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
+  .menu a:hover{background:#e2e8f0;color:var(--text)}
+  .hero{}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;background:#e0f2fe;color:#075985;padding:8px 12px;border-radius:999px;font-weight:700}
+  .title{font-size:clamp(1.8rem,2.6vw,3rem);line-height:1.15;margin:14px 0 8px;font-weight:800}
+  .subtitle{font-size:1.1rem;color:var(--muted);max-width:58ch}
+  .hero-card{background:linear-gradient(180deg,#ffffff, #f1f5f9);border:1px solid #e2e8f0;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}
+  .price{display:flex;align-items:center;gap:14px;margin-top:18px}
+  .price .value{font-size:2rem;font-weight:900}
+  .stack{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .countdown{display:flex;align-items:center;gap:10px;background:#fff;color:#991b1b;padding:10px 14px !important;border-radius:12px;font-weight:800}
+  .timer{font-variant-numeric:tabular-nums}
+  section{padding:30px}
+  .section-title{font-size:1.6rem;font-weight:900;margin-bottom:10px;margin-top:-10px}
+  .muted{color:var(--muted)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .card h4{margin:8px 0;font-size:1.05rem}
+  .list{margin:10px 0 0;padding-left:18px}
+  .list li{margin:6px 0}
+  .before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .ba{background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .ba h4{}
+  .cta-band{background:linear-gradient(90deg,#dbeafe,#e0f2fe);border:1px solid #bfdbfe;padding:22px !important;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px !important}
+  .bonus{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .author{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+  .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#60a5fa,#34d399);box-shadow:var(--shadow)}
+  footer{padding:36px 56px;color:var(--muted)}
+  .small{font-size:.9rem}
+  .grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+  .center{text-align:center}
+  .strike{opacity:.7;text-decoration:line-through}
+  @media (max-width: 960px){
+    .hero-grid,.before-after,.cards,.bonus,.author,.grid-2{grid-template-columns:1fr}
+    .menu{display:none}
+    .title{font-size:clamp(1.6rem,5vw,2.4rem)}
+  }
+
+.main-content.flex {
+  gap: 0 !important;
+}
+button.flex.text-sm.items-center.gap-2 {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
+
+div[class*="group-[.screen-mobile]:grid"].z-\[100\],
+div[class*="group-[.screen-mobile]:grid"].z-\[100\] * {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+</style>
+
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="dot"></span> Rota do Laudo Seguro</div>
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#resultado">Antes & Depois</a>
+      <a href="#entregaveis">Entregáveis</a>
+      <a href="#bonus">Bônus</a>
+      <a href="#garantia">Garantia</a>
+      <a href="#autor">Autor</a>
+    </nav>
+    <button class="btn" onclick="goCheckout()">Garantir meu acesso</button>
+  </div>
+</header>
+
+<main id="inicio" class="container">
+  
+<!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">🩺 Mini-Curso para Médicos</div>
+          <h1 class="title">Rota do Laudo Seguro (e rápido)</h1>
+          <p class="subtitle">Domine a perícia médica judicial e confeccione laudos com confiança, segurança e rapidez — mesmo que esteja começando agora.</p>
+
+          <div class="stack">
+            <div class="countdown" title="Oferta com urgência controlada">
+              ⏳ Oferta expira em <span id="timer" class="timer">15:00</span>
+            </div>
+            <button class="btn" onclick="goCheckout()">Comprar agora</button>
+            <a class="btn ghost" href="#entregaveis">Ver o que recebo</a>
+          </div>
+
+          <div class="price" style="margin-top:18px !important">
+            <span class="value">R$ 147,90</span>
+            <span class="muted">acesso vitalício ao conteúdo</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3 class="section-title">💬 É hora da sua virada de chave!</h3>
+          <p class="small">Pare de perder tempo e oportunidades por medo e insegurança. Aprenda o passo a passo completo para elaborar laudos periciais judiciais de forma segura, rápida e profissional — sem depender de ninguém e sem medo de ser questionado.</p>
+          <div class="cta-band">
+            <div>
+              <strong>Investimento: R$147,90</strong><br/>
+              <span class="muted small">Comece agora e acelere seus primeiros laudos</span>
+            </div>
+            <button class="btn" onclick="goCheckout()">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antes & Depois -->
+    <section id="resultado">
+      <h2 class="section-title">📸 Resultados</h2>
+      <div class="before-after">
+        <div class="ba">
+          <h4 style="margin-top:-4px">🟥 Antes</h4>
+          <img src="https://media.inlead.cloud/uploads/40084/2025-10-25/BbX8A-medico-exausto-01.jpg"  width="300" height="300"> 
+          <p>😴 Cansado dos plantões</p> 
+          <p>💸 Com pouco dinheiro no final do mês</p> 
+          <p>😟 Muito tempo fora de casa e longe da família</p> 
+          <p>🫤 Falta de reconhecimento profissional</p>
+       </div>
+        <div class="ba">
+          <h4 style="margin-top:-4px">🟩 Depois</h4>
+        <img src="https://media.inlead.cloud/uploads/40084/2025-10-25/OVaHk-medico-feliz-laudo-pronto-01.jpg"  width="300" height="300"> 
+          <p>😎 Energia renovada</p> 
+          <p>💰 Dinheiro de reserva no final do mês</p> 
+          <p>🏠 Tempo de qualidade em casa e perto da família</p> 
+          <p>🥇 Reconhecimento profissional perante a sociedade e colegas</p>
+        </div>
+      </div>
+      <div class="cta-band">
+        <div>
+          <strong>R$147,90 – tudo que você precisa para começar</strong>
+          <div class="muted small">Mini-Curso + modelos profissionais + suporte 30 dias</div>
+        </div>
+        <button class="btn" onclick="goCheckout()">Quero meu acesso</button>
+      </div>
+    </section>
+
+    <!-- Entregáveis -->
+    <section id="entregaveis">
+      <h2 class="section-title">📦 O que você vai receber no <em>Rota do Laudo Seguro (e rápido)</em></h2>
+      <div class="cards" style="margim-bottom:18px">
+        <article class="card">
+          <h4>1️⃣ Aulas gravadas</h4>
+          <p>🎥 Aprenda no seu ritmo, com explicações passo a passo. Mini-Curso em vídeo mostrando exatamente como montar um laudo pericial do zero.</p>
+        </article>
+        <article class="card">
+          <h4>2️⃣ Modelo de Laudo Real</h4>
+          <p>📄 Economize tempo e elimine dúvidas. Exemplo completo de um laudo judicial real, pronto para consulta.</p>
+        </article>
+        <article class="card">
+          <h4>3️⃣ Modelo de Laudo em Branco</h4>
+          <p>🧩 Estrutura pronta para preencher, economizando horas. Um esqueleto essencial de laudo, formatado e preparado para uso imediato.</p>
+        </article>
+        <article class="card">
+          <h4>4️⃣ Modelo de Petição de Aceite da Perícia</h4>
+          <p>📬 Modelo pronto para aceitar perícias com confiança e rapidez.</p>
+        </article>
+        <article class="card">
+          <h4>5️⃣ Modelo de Declinação da Perícia</h4>
+          <p>🚫 Recuse perícias que não deseja realizar com elegância e segurança jurídica.</p>
+        </article>
+        <article class="card">
+          <h4>6️⃣ Arquivo com Exame Físico Pericial</h4>
+          <p>👨‍⚕️ Modelo detalhado, passo a passo, para agilizar seu exame e evitar inseguranças.</p>
+        </article>
+        <article class="card">
+          <h4>7️⃣ Modelo de Relato do(a) Periciado(a)</h4>
+          <p>🗒️ Estrutura completa para conduzir a entrevista e redigir o relato com clareza.</p>
+        </article>
+        <article class="card">
+          <h4>8️⃣ Tutorial Rota do Laudo Rápido</h4>
+          <p>🧭 Guia prático e direto que “pega você na mão” e conduz em cada etapa do laudo.</p>
+        </article>
+      </div>
+      <div class="cta-band">
+        <div>
+          <strong>R$147,90 — acesso vitalício ao conteúdo</strong>
+          <div class="muted small">Garantia incondicional de 7 dias</div>
+        </div>
+        <button class="btn" onclick="goCheckout()">Quero meu acesso</button>
+      </div>
+    </section>
+
+    <!-- Bônus -->
+    <section id="bonus">
+      <h2 class="section-title">🎁 Bônus Exclusivos</h2>
+      <div class="bonus">
+        <article class="card">
+          <h4>🎯 Bônus 1 – Modelo de Refutação à Tentativa de Impugnação</h4>
+          <p>Deixe qualquer advogado sem argumentos. Você recebe o modelo pronto usado para responder e anular impugnações de forma técnica e elegante.</p>
+        </article>
+        <article class="card">
+          <h4>💼 Bônus 2 – Currículo Modelo de Excelência</h4>
+          <p>Monte um currículo impecável e profissional. Use o mesmo modelo do Dr. Régis Pontel para conquistar respeito e credibilidade em nomeações de perícia.</p>
+        </article>
+      </div>
+      <div class="cta-band" style="margin-top:18px">
+        <div>
+          <strong>R$147,90 – tudo incluso + bônus gratuitos!</strong>
+          <div class="muted small">Feito para acelerar seus primeiros casos</div>
+        </div>
+        <button class="btn" onclick="goCheckout()">Garantir meu acesso</button>
+      </div>
+    </section>
+
+    <!-- Garantia -->
+    <section id="garantia">
+      <h2 class="section-title">🛡️ Garantia Total</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p>Você tem <strong>7 dias de garantia incondicional</strong>. Se por qualquer motivo achar que o conteúdo não é para você, basta enviar um e-mail dentro de 7 dias e receberá <strong>100% do seu dinheiro de volta</strong>. Sem perguntas. Sem complicações.</p>
+        </div>
+        <div class="card center">
+          <div class="countdown" style="justify-content:center flex flex-col">
+		<div><span>Restam</span></div>
+		<div><span id="timer2" class="timer">15:00</span></div>
+		<div><span>para garantir o acesso</span></div>
+	  </div>
+          <button class="btn" onclick="goCheckout()">Última chance</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autor -->
+    <section id="autor">
+      <h2 class="section-title">👨‍⚕️ Criador do Método Rota do Laudo Seguro</h2>
+      <div class="author card" style="padding-top:18px !important">
+        <div style="border-radius:50px overflow: hidden !important;" width="120" height="120">
+            <img src="https://media.inlead.cloud/uploads/40084/2025-10-25/jGTWg-dr-regis.jpg" style="object-fit: cover" width="120" height="120">
+        </div>
+        <div>
+          <h3 style="margin:0 0 6px">Dr. Régis Pontel</h3>
+          <p class="muted small" style="margin:0 0 10px">Médico formado com excelência pela Universidade Federal de Santa Maria (RS).</p>
+          <p class="small">Atua há mais de 7 anos nas áreas de Medicina do Trabalho e Medicina da Família, 4 anos como Médico Emergencista e 2 anos como Médico Auditor. Pós-graduado em Perícia Médica, já realizou <strong>mais de 90 perícias</strong> e os laudos entregues renderam inúmeros elogios de magistrados e advogados.</p>
+          <p class="muted small">📚 Experiência real + resultados comprovados = o caminho mais rápido para sua segurança na perícia judicial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkout (última chamada) -->
+    <section id="checkout">
+      <h2 class="section-title">💰 Última Chamada</h2>
+      <div class="cta-band">
+        <div>
+          <div class="strike">de R$ 297,00</div>
+          <div class="value">Apenas <strong>R$ 147,90</strong></div>
+          <div class="muted small">Acesso vitalício • Garantia 7 dias • Bônus inclusos</div>
+        </div>
+        <button class="btn" onclick="goCheckout()">Garantir meu acesso</button>
+      </div>
+    </section>
+
+    <!-- Resumo final -->
+    <section>
+      <h2 class="section-title">💬 Esse produto é pra você!</h2>
+      <div class="card">
+        <p>O <strong>Rota do Laudo Seguro (e rápido)</strong> é pra você:<br>
+🚀 Que quer sair da rotina de plantões<br>
+🚀 Que quer trabalhar em casa<br>
+🚀 Que quer ganhar mais por sua hora médica<br>
+🚀 Que quer aumentar sua renda<br>
+🚀 Que quer ser reconhecido na profissão </p>
+      </div>
+    </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="small">© <span id="year"></span> Rota do Laudo Seguro • Todos os direitos reservados</div>
+  </div>
+</footer>
+
+<script>
+    // Smooth anchors on Safari as well (already CSS-based)
+
+    // Countdown (15 minutes)
+    function startTimer(duration=900, displayEls=[document.getElementById('timer'), document.getElementById('timer2')]){
+      let timer = duration, minutes, seconds;
+      setInterval(function(){
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        displayEls.forEach(el=>{ if(el) el.textContent = minutes + ":" + seconds; });
+        if(--timer < 0){ timer = duration; } // reinicia
+      }, 1000);
+    }
+
+    /*
+    document.addEventListener('DOMContentLoaded', function(){
+      const fifteen = 60 * 15; // 15 minutos
+      const displays = [document.getElementById('timer'), document.getElementById('timer2')];
+      startTimer(fifteen, displays);
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+    */
+    
+    setTimeout(startTimer(), 3000);
+
+    // Checkout handler (placeholder)
+    function goCheckout(){
+      // Substitua este alert pelo link real quando tiver o checkout
+      window.location.href = 'https://pay.hotmart.com/M102510457E?checkoutMode=10';
+    }
+document.addEventListener('DOMContentLoaded', () => {
+  
+  const oldHeader = document.querySelector('div.z-[100]');
+  if (oldHeader) oldHeader.remove();
+});
+  </script>
